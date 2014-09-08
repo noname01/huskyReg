@@ -2,6 +2,7 @@ var timeSchBaseUrl = "http://www.washington.edu/students/timeschd/";
 var slnBaseUrl = "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp";
 var regBaseUrl = "https://sdb.admin.washington.edu/students/uwnetid/register.asp";
 
+//time schedule page, add reg button in each row
 if(document.URL.indexOf(timeSchBaseUrl) == 0){
     $("pre").each(function(i, u){
         if(i > 0){
@@ -15,4 +16,11 @@ if(document.URL.indexOf(timeSchBaseUrl) == 0){
         }
         else $(u).css("margin-left", "60px");
     })
+}
+//registration page, auto-fill new course sln
+else if(document.URL.indexOf(regBaseUrl) == 0){
+    var queryStr = window.location.search;
+    var slnRegex = /\?.*toadd=(\d*).*/;
+    var sln = queryStr.replace(slnRegex, "$1");
+    $('input[name^="sln"][value=""]').first().val(sln);
 }
