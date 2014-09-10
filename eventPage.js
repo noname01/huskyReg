@@ -1,3 +1,5 @@
+//todo: better css; add to schFinder; add btns to myPlan; omnibox reg
+
 var regUrl = "https://sdb.admin.washington.edu/students/uwnetid/register.asp";
 
 chrome.runtime.onMessage.addListener(function(data, sender) {

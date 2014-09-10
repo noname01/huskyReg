@@ -7,12 +7,12 @@ if(document.URL.indexOf(timeSchBaseUrl) == 0){
         if(i > 0){
             var row = $(u).parent().parent();
             var sln = $(u).find('a[href^="' + slnBaseUrl + '"]').text();
-            var button = $("<button>Reg</button>");
+            var button = $("<button class='regBtn'>Reg</button>");
             button.click(function(){
                 chrome.runtime.sendMessage({toadd: sln});
             });
-            $("<td style='vertical-align: top; padding: 10px 5px;'></td>").append(button).prependTo(row);
+            $(button).append(button).prependTo(row);
         }
-        else $(u).css("margin-left", "60px");
     })
+    $("body").css("opacity", "1"); //hide abrupt dom changes
 }

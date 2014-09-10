@@ -1,0 +1,13 @@
+body {
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.regBtn {
+    position: absolute;
+    margin: 9px 0 0 3px;
+}
+
+pre {
+    padding-left: 60px;
+}

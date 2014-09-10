@@ -12,7 +12,8 @@
         "matches": [
             "http://www.washington.edu/students/timeschd/*",
             "https://sdb.admin.washington.edu/students/uwnetid/register.asp"
-        ]
+        ],
+        "css": ["style.css"]
     }],
     "background": {
         "scripts": ["eventPage.js"],
