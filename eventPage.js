@@ -1,6 +1,5 @@
-//todo: connect with api server
-//todo: add btns to myPlan; omnibox goto/reg
-//todo: help page & config page
+//todo: add btns to enroll-summary
+//todo: enroll-summary page auto reg
 
 var regUrl = "https://sdb.admin.washington.edu/students/uwnetid/register.asp#regform";
 var timeSchBaseUrl = "http://www.washington.edu/students/timeschd/AUT2014/";
@@ -25,8 +24,7 @@ chrome.runtime.onMessage.addListener(function(data, sender) {
 chrome.omnibox.onInputChanged.addListener(
     function(text, suggest) {
         suggest([
-            {content: "reg", description: "command: reg [course][number][section] - comming soon"},
-            {content: "goto", description: "command: goto [course][number]"}
+            {content: "cse143", description: "[course][number] e.g. cse143"},
         ]);
     }
 );
@@ -34,16 +32,11 @@ chrome.omnibox.onInputChanged.addListener(
 chrome.omnibox.onInputEntered.addListener(
     function(text) {
         var cmd = text.trim().toLowerCase();
-        if(cmd.indexOf("reg") == 0) {
-            alert("coming soon")
+        var abbr = cmd.replace(/^\s*([a-z]+)\s*(\d+)\s*$/, "$1");
+        var num = cmd.replace(/^\s*([a-z]+)\s*(\d+)\s*$/, "$2");
+        if(catalog[abbr] !== undefined) {
+            window.open(timeSchBaseUrl + catalog[abbr].page + "#" + abbr + num)
         }
-        else if (cmd.indexOf("goto") == 0) {
-            var abbr = cmd.replace(/^goto\s*([a-z]+)\s*(\d+)\s*$/, "$1");
-            var num = cmd.replace(/^goto\s*([a-z]+)\s*(\d+)\s*$/, "$2");
-            if(catalog[abbr] !== undefined) {
-                window.open(timeSchBaseUrl + catalog[abbr].page + "#" + abbr + num)
-            }
-            else alert("Error: unknown course abbreviation.")
-        }
+        else alert("Error: unknown course abbreviation.")
     });
 
