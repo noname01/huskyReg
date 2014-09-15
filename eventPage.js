@@ -1,4 +1,5 @@
-//todo: better css; add to schFinder; add btns to myPlan; omnibox reg
+//todo: connect with api server
+//todo: add btns to myPlan; omnibox goto/reg
 
 var regUrl = "https://sdb.admin.washington.edu/students/uwnetid/register.asp";
 
