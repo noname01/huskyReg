@@ -1,5 +1,6 @@
 //todo: add btns to enroll-summary
 //todo: enroll-summary page auto reg
+//todo: config page to choose quarter
 
 var regUrl = "https://sdb.admin.washington.edu/students/uwnetid/register.asp#regform";
 var timeSchBaseUrl = "http://www.washington.edu/students/timeschd/AUT2014/";
@@ -32,10 +33,10 @@ chrome.omnibox.onInputChanged.addListener(
 chrome.omnibox.onInputEntered.addListener(
     function(text) {
         var cmd = text.trim().toLowerCase();
-        var abbr = cmd.replace(/^\s*([a-z]+)\s*(\d+)\s*$/, "$1");
-        var num = cmd.replace(/^\s*([a-z]+)\s*(\d+)\s*$/, "$2");
+        var abbr = cmd.replace(/^\s*([a-z]*)\s*(\d*).*$/, "$1");
+        var num = cmd.replace(/^\s*([a-z]*)\s*(\d*).*$/, "$2");
         if(catalog[abbr] !== undefined) {
-            window.open(timeSchBaseUrl + catalog[abbr] + "#" + abbr + num)
+            window.open(timeSchBaseUrl + catalog[abbr] + (num == "" ? "" : "#" + abbr + num));
         }
         else alert("Error: unknown course abbreviation.")
     });
