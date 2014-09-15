@@ -35,7 +35,7 @@ chrome.omnibox.onInputEntered.addListener(
         var abbr = cmd.replace(/^\s*([a-z]+)\s*(\d+)\s*$/, "$1");
         var num = cmd.replace(/^\s*([a-z]+)\s*(\d+)\s*$/, "$2");
         if(catalog[abbr] !== undefined) {
-            window.open(timeSchBaseUrl + catalog[abbr].page + "#" + abbr + num)
+            window.open(timeSchBaseUrl + catalog[abbr] + "#" + abbr + num)
         }
         else alert("Error: unknown course abbreviation.")
     });
