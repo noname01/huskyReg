@@ -13,6 +13,6 @@ if(document.URL.indexOf(timeSchBaseUrl) == 0){
             });
             $(button).append(button).prependTo(row);
         }
-    })
+    });
     $("body").css("opacity", "1"); //hide abrupt dom changes
 }

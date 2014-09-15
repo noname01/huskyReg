@@ -1,4 +1,4 @@
-{
+var catalog = {
  "arctic": {
   "fullname": "Arctic Studies",
   "page": "arctic.html"
@@ -1195,4 +1195,4 @@
   "fullname": "Social Work (MSW)",
   "page": "socwk.html"
  }
-}
+};

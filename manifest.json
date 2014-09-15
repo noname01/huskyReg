@@ -3,7 +3,7 @@
     "name": "HuskyReg",
     "description": "Helper tools for UW course registration",
     "version": "0.0.1",
-    //"omnibox": {"keyword": "hr"},
+    "omnibox": {"keyword": "hr"},
     "icons": {
         "16": "icon.png"
     },
@@ -16,7 +16,7 @@
         "css": ["style.css"]
     }],
     "background": {
-        "scripts": ["eventPage.js"],
+        "scripts": ["eventPage.js", "lib.js"],
         "persistent": false
     }
 }
