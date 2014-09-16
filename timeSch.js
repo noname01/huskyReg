@@ -11,7 +11,7 @@ if(document.URL.indexOf(timeSchBaseUrl) == 0){
             button.click(function(){
                 chrome.runtime.sendMessage({toadd: sln});
             });
-            $(button).append(button).prependTo(row);
+            $(button).prependTo(row);
         }
     });
     $("body").css("opacity", "1"); //hide abrupt dom changes

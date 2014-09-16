@@ -8,10 +8,11 @@
         "16": "icon.png"
     },
     "content_scripts": [ {
-        "js": [ "jquery-1.11.1.min.js", "timeSch.js" , "regPage.js"],
+        "js": [ "jquery-1.11.1.min.js", "timeSch.js" , "regPage.js", "enrollment.js"],
         "matches": [
             "http://www.washington.edu/students/timeschd/*",
-            "https://sdb.admin.washington.edu/students/uwnetid/register.asp"
+            "https://sdb.admin.washington.edu/students/uwnetid/register.asp",
+            "https://sdb.admin.washington.edu/timeschd/uwnetid/tsstat.asp*"
         ],
         "css": ["style.css"]
     }],

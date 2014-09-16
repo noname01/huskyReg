@@ -1,4 +1,3 @@
-//todo: add btns to enroll-summary
 //todo: enroll-summary page auto reg
 //todo: config page to choose quarter
 
