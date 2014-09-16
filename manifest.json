@@ -5,7 +5,7 @@
     "version": "0.0.1",
     "omnibox": {"keyword": "hr"},
     "icons": {
-        "16": "icon.png"
+        "64": "icon.png"
     },
     "content_scripts": [ {
         "js": [ "jquery-1.11.1.min.js", "timeSch.js" , "regPage.js", "enrollment.js"],
