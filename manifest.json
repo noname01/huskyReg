@@ -5,9 +5,9 @@
     "version": "0.0.1",
     "omnibox": {"keyword": "hr"},
     "icons": {
-        "16": "icon16.png",
-        "48": "icon48.png",
-        "128": "icon128.png"
+        "16": "img/icon16.jpg",
+        "48": "img/icon48.jpg",
+        "128": "img/icon128.jpg"
     },
     "content_scripts": [ {
         "js": [ "jquery-1.11.1.min.js", "timeSch.js" , "regPage.js", "enrollment.js"],
