@@ -1,4 +1,3 @@
-//todo: enroll-summary page auto reg
 //todo: config page to choose quarter
 
 var regUrl = "https://sdb.admin.washington.edu/students/uwnetid/register.asp#regform";
