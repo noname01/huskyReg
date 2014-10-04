@@ -1,7 +1,12 @@
-//todo: config page to choose quarter
-
 var regUrl = "https://sdb.admin.washington.edu/students/uwnetid/register.asp#regform";
-var timeSchBaseUrl = "http://www.washington.edu/students/timeschd/AUT2014/";
+var timeSchBaseUrl = "http://www.washington.edu/students/timeschd/";
+
+chrome.storage.sync.get({
+    quarter: "AUT",
+    year: 2014
+}, function(items) {
+    timeSchBaseUrl += items.quarter + items.year + "/";
+});
 
 chrome.runtime.onMessage.addListener(function(data, sender) {
     chrome.tabs.query({url: regUrl}, function(resultTabs) {
